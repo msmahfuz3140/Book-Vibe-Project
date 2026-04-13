@@ -1,5 +1,6 @@
-import React, { use } from "react";
+import React, { use, useContext, useState } from "react";
 import { useParams } from "react-router";
+import { BookContext } from "../../context/BookContext";
 
 const booksPromiss = fetch("/booksData.json").then((res) => res.json());
 
@@ -20,6 +21,8 @@ const BookDetails = () => {
         );
     }
 
+    const {handleMarkAsRead, storedBook} = useContext(BookContext);
+
     return (
         <div className="min-h-screen bg-linear-to-br from-gray-50 to-white px-4 py-10">
             <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 bg-white shadow-xl rounded-3xl overflow-hidden">
@@ -29,7 +32,7 @@ const BookDetails = () => {
                     <img
                         src={expactedBook.image}
                         alt={expactedBook.bookName}
-                        className="w-full max-w-sm object-contain rounded-xl shadow-2xl hover:scale-105 transition-transform duration-300"
+                        className="w-full max-w-sm object-contain rounded-xl shadow-2xl hover:scale-105     transition-transform duration-300"
                     />
                 </div>
 
@@ -99,8 +102,8 @@ const BookDetails = () => {
 
                     {/* Buttons */}
                     <div className="flex flex-col sm:flex-row gap-4 mt-8">
-                        <button className="w-full sm:w-auto px-6 py-3 border rounded-xl font-semibold hover:bg-gray-100 transition">
-                            📖 Read Now
+                        <button className="w-full sm:w-auto px-6 py-3 border rounded-xl font-semibold hover:bg-gray-100 transition" onClick={()=>handleMarkAsRead(expactedBook)}>
+                            📖 Mark as Read
                         </button>
 
                         <button className="w-full sm:w-auto px-6 py-3 bg-linear-to-r from-blue-500 to-cyan-500 text-white rounded-xl font-semibold hover:opacity-90 transition">
