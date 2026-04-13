@@ -89,7 +89,7 @@ const Footer = () => {
                     </p>
 
                     <p className="text-sm text-gray-500">
-                        Designed with ❤️ by Mahfuz
+                        Created with ❤️ by MAHFUZ
                     </p>
                 </div>
             </div>
