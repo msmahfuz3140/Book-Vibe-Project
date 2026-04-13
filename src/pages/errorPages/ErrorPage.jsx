@@ -4,7 +4,7 @@ import { Link } from "react-router";
 
 const ErrorPage = () => {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-900 via-sky-900 to-blue-700 px-4">
+    <div className="min-h-screen flex items-center justify-center bg-linear-to-br from-slate-900 via-sky-900 to-blue-700 px-4">
       
       <div className="text-center text-white max-w-lg">
         

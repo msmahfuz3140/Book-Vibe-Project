@@ -50,7 +50,7 @@ const Banner = () => {
             <img
               src={bannerImg}
               alt="Books"
-              className="w-72 sm:w-80 md:w-96 lg:w-[420px]
+              className="w-72 sm:w-80 md:w-96 lg:w-105
               rounded-2xl shadow-lg object-cover"
             />
 

@@ -38,7 +38,7 @@ const Nav = () => {
 
                         <ul
                             tabIndex={0}
-                            className="menu menu-sm dropdown-content mt-3 z-[1]
+                            className="menu menu-sm dropdown-content mt-3 z-1
               p-4 shadow-xl bg-white rounded-2xl w-52 space-y-2">
                             {links}
                         </ul>
@@ -46,7 +46,7 @@ const Nav = () => {
 
                     {/* Logo */}
                     <h1 className="text-2xl md:text-3xl font-extrabold
-          bg-gradient-to-r from-green-500 to-emerald-700
+          bg-linear-to-r from-green-500 to-emerald-700
           bg-clip-text text-transparent">
                         Book Vibe
                     </h1>
@@ -70,7 +70,7 @@ const Nav = () => {
                     </button>
 
                     <button className="px-5 py-2 rounded-xl
-          bg-gradient-to-r from-green-500 to-emerald-600
+          bg-linear-to-r from-green-500 to-emerald-600
           text-white shadow-lg hover:scale-105
           transition-all duration-300">
                         Sign Up
