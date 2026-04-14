@@ -1,4 +1,4 @@
-import React, { use, useContext, useState } from "react";
+import React, { use, useContext, } from "react";
 import { useParams } from "react-router";
 import { BookContext } from "../../context/BookContext";
 
@@ -21,7 +21,7 @@ const BookDetails = () => {
         );
     }
 
-    const {handleMarkAsRead, storedBook} = useContext(BookContext);
+    const {handleMarkAsRead, handleMarkAsWishLish} = useContext(BookContext);
 
     return (
         <div className="min-h-screen bg-linear-to-br from-gray-50 to-white px-4 py-10">
@@ -81,7 +81,7 @@ const BookDetails = () => {
                     <div className="grid grid-cols-2 gap-4 border-t pt-6 text-sm">
                         <div>
                             <p className="text-gray-500">Pages</p>
-                            <p className="font-semibold">{expactedBook.pages}</p>
+                            <p className="font-semibold">{expactedBook.totalPages}</p>
                         </div>
 
                         <div>
@@ -91,7 +91,7 @@ const BookDetails = () => {
 
                         <div>
                             <p className="text-gray-500">Year</p>
-                            <p className="font-semibold">{expactedBook.year}</p>
+                            <p className="font-semibold">{expactedBook.yearOfPublishing}</p>
                         </div>
 
                         <div>
@@ -106,7 +106,7 @@ const BookDetails = () => {
                             📖 Mark as Read
                         </button>
 
-                        <button className="w-full sm:w-auto px-6 py-3 bg-linear-to-r from-blue-500 to-cyan-500 text-white rounded-xl font-semibold hover:opacity-90 transition">
+                        <button className="w-full sm:w-auto px-6 py-3 bg-linear-to-r from-blue-500 to-cyan-500 text-white rounded-xl font-semibold hover:opacity-90 transition" onClick={() => handleMarkAsWishLish(expactedBook)}>
                             ❤️ Add to Wishlist
                         </button>
                     </div>
